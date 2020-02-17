@@ -1,0 +1,21 @@
+spring:
+ application:
+  name:proxy-service
+eureka:
+ client:
+  serviceUrl:
+   defaultZone : http://localhost:9998/eureka/ 
+   fetch-registry: true
+   appname: proxy-service
+server:
+ port:8762
+zuul:
+ routes:
+      mail-service:
+       path: /mail-service/**
+       service-id: mail-service
+      customer-service:
+       path: /customer-service/**
+       service-id: customer-service
+ host:
+  socket-timeout-millis : 30000

@@ -1,0 +1,14 @@
+spring:
+ application:
+  name:message-service
+eureka:
+ client:
+  serviceUrl:
+   defaultZone : http://localhost:9998/eureka/ 
+   fetch-registry: true
+server:
+ port:8764
+zuul:
+ host:
+  socket-timeout-millis : 30000
+  
